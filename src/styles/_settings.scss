@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "font-1";
+  src: url(../assets/fonts/Montserrat-Medium.ttf);
+}
+
+$font-1: "font-1", sans-serif;
+$color-1: #ff6060;
+$color-2: #f7f7f7;
+
+@mixin verticalCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// @include verticalCenter;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 90%;
+  margin: 0 auto;
+  font-family: $font-1;
+  background: white;
+}
+
+.bg-home {
+  margin-top: 30px;
+  height: 223px;
+  // filter: brightness(70%);
+  background: url("../assets/img/mountain-bg-home-page.png") center/cover;
+  @include verticalCenter;
+  border-radius: 25px;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}

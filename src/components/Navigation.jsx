@@ -6,10 +6,13 @@ const Navigation = () => {
     <div className="navigation">
       <img src="./kasa-logo.svg" alt="kasa logo" />
       <ul>
-        <NavLink to="/">
+        <NavLink to="/" className={(nav) => (nav.isActive ? "nav-active" : "")}>
           <li>Accueil</li>
         </NavLink>
-        <NavLink to="/about">
+        <NavLink
+          to="/about"
+          className={(nav) => (nav.isActive ? "nav-active" : "")}
+        >
           <li>A propos</li>
         </NavLink>
       </ul>
