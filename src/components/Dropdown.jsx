@@ -19,7 +19,7 @@ const Dropdown = (props) => {
       arrowUpIcon.classList.add("hidden");
       arrowDownIcon.classList.remove("hidden");
     });
-  });
+  }, []);
 
   return (
     <div className="dropdown">
