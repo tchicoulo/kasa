@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import Card from "./Card";
+import { NavLink } from "react-router-dom";
 
 const Gallery = () => {
   const [data, setData] = useState([]);
@@ -18,7 +19,9 @@ const Gallery = () => {
     <div className="gallery">
       <ul>
         {data.map((logement) => (
-          <Card key={logement.id} logement={logement} />
+          <NavLink key={logement.id} to="/logement" logement={logement}>
+            <Card key={logement.id} logement={logement} />
+          </NavLink>
         ))}
       </ul>
     </div>

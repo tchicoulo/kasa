@@ -1,11 +1,13 @@
 import React from "react";
+
 import Navigation from "../components/Navigation";
+import Error from "../components/Error";
 
 const ErrorPage = () => {
   return (
     <div>
       <Navigation />
-      <h1>Error page : 404</h1>
+      <Error />
     </div>
   );
 };

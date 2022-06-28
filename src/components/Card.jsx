@@ -1,9 +1,9 @@
 import React from "react";
 
 const Card = ({ logement }) => {
-  console.log(logement.title);
   return (
     <li className="card">
+      <div className="bg"></div>
       <h2>{logement.title}</h2>
     </li>
   );

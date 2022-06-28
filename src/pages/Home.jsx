@@ -7,6 +7,7 @@ const Home = () => {
     <div>
       <Navigation />
       <div className="bg-home">
+        <div className="bg-darken"></div>
         <h1>Chez vous, partout et ailleurs</h1>
       </div>
       <Gallery />
