@@ -1,4 +1,5 @@
 import React from "react";
+import BackgroundCustom from "../components/BackgroundCustom";
 import Gallery from "../components/Gallery";
 import Navigation from "../components/Navigation";
 
@@ -6,10 +7,10 @@ const Home = () => {
   return (
     <div>
       <Navigation />
-      <div className="bg-home">
-        <div className="bg-darken"></div>
-        <h1>Chez vous, partout et ailleurs</h1>
-      </div>
+      <BackgroundCustom
+        background="bg-home"
+        title="Chez vous, partout et ailleurs"
+      />
       <Gallery />
     </div>
   );

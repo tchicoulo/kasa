@@ -1,3 +1,4 @@
+import BackgroundCustom from "../components/BackgroundCustom";
 import Dropdown from "../components/Dropdown";
 import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
@@ -6,9 +7,7 @@ const About = () => {
   return (
     <div>
       <Navigation />
-      <div className="bg-about">
-        <div className="bg-darken"></div>
-      </div>
+      <BackgroundCustom background="bg-about" />
       <Dropdown
         title="Fiabilité"
         description="Les annonces postées sur Kasa garantissent une fiabilité totale. Les
