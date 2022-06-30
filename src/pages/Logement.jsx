@@ -1,23 +1,38 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import { useParams } from "react-router-dom";
+import myData from "../data/logement.json";
+import Carrousel from "../components/Carrousel";
+import Tag from "../components/Tag";
 
 const Logement = () => {
   const { id } = useParams();
-  console.log(id);
-  // const [data, setData] = useState([]);
+  console.log({ myData });
 
-  // // useEffect(() => {
-  // //   axios
-  // //     .get("./data/logement.json")
-  // //     .then((res) => setData(res.data))
-  // //     .catch((err) => console.log(err));
-  // // }, []);
+  const logementDetails = myData.find((el) => el.id === id);
+  console.log(logementDetails);
 
   return (
     <div>
       <Navigation />
-      <h1>Logement Page</h1>
+      <Carrousel />
+      <div className="detailsLogement">
+        <h1>{logementDetails.title}</h1>
+        <h2>{logementDetails.location}</h2>
+        <div className="host">
+          <h3>{logementDetails.host.name}</h3>
+          <img
+            src={logementDetails.host.picture}
+            alt={logementDetails.host.name}
+          />
+        </div>
+        <div className="tags">
+          {logementDetails.tags.map((tag, index) => (
+            <Tag key={index} tag={tag} />
+          ))}
+        </div>
+        <div className="rating"></div>
+      </div>
     </div>
   );
 };

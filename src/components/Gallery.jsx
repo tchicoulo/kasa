@@ -1,24 +1,25 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import axios from "axios";
+// import { useEffect } from "react";
+// import { useState } from "react";
+// import axios from "axios";
 import Card from "./Card";
 import { NavLink } from "react-router-dom";
+import myData from "../data/logement.json";
 
 const Gallery = () => {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get("./data/logement.json")
-      .then((res) => setData(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("./data/logement.json")
+  //     .then((res) => setData(res.data))
+  //     .catch((err) => console.log(err));
+  // }, []);
 
   return (
     <div className="gallery">
       <ul>
-        {data.map((logement) => (
+        {myData.map((logement) => (
           <NavLink
             key={logement.id}
             to={`/logement/${logement.id}`}
