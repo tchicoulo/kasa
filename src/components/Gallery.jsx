@@ -19,7 +19,11 @@ const Gallery = () => {
     <div className="gallery">
       <ul>
         {data.map((logement) => (
-          <NavLink key={logement.id} to="/logement" logement={logement}>
+          <NavLink
+            key={logement.id}
+            to={`/logement/${logement.id}`}
+            logement={logement}
+          >
             <Card key={logement.id} logement={logement} />
           </NavLink>
         ))}
