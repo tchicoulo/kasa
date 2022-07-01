@@ -39,6 +39,11 @@
   & h2 {
     font-size: 18px;
   }
+  @media only screen and (max-width: $sm) {
+    & h1 {
+      font-size: 18px;
+    }
+  }
 }
 
 .host {
@@ -78,7 +83,13 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  @media only screen and (max-width: $md) {
+    flex-direction: column;
+  }
 }
 .drop-down-box {
   width: 48%;
+  @media only screen and (max-width: $md) {
+    width: 100%;
+  }
 }
