@@ -7,6 +7,12 @@ $font-1: "font-1", sans-serif;
 $color-1: #ff6060;
 $color-2: #f7f7f7;
 
+//screen sizes
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
 @mixin verticalCenter {
   display: flex;
   justify-content: center;

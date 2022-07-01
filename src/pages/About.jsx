@@ -34,7 +34,8 @@ const About = () => {
         <Dropdown
           key={index}
           title={informations.title}
-          description={informations.description}
+          description={<p>{informations.description}</p>}
+          Style={{ fontSize: "24px" }}
         />
       ))}
 

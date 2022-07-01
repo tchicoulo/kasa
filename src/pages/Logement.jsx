@@ -4,10 +4,13 @@ import { useParams } from "react-router-dom";
 import myData from "../data/logement.json";
 import Carrousel from "../components/Carrousel";
 import Tag from "../components/Tag";
+import StarRating from "../components/StarRating";
+import Dropdown from "../components/Dropdown";
 
 const Logement = () => {
   const { id } = useParams();
-  console.log({ myData });
+
+  const arrayOfRating = [1, 2, 3, 4, 5];
 
   const logementDetails = myData.find((el) => el.id === id);
   console.log(logementDetails);
@@ -16,9 +19,11 @@ const Logement = () => {
     <div>
       <Navigation />
       <Carrousel />
-      <div className="detailsLogement">
-        <h1>{logementDetails.title}</h1>
-        <h2>{logementDetails.location}</h2>
+      <div className="details-logement">
+        <div className="title">
+          <h1>{logementDetails.title}</h1>
+          <h2>{logementDetails.location}</h2>
+        </div>
         <div className="host">
           <h3>{logementDetails.host.name}</h3>
           <img
@@ -31,7 +36,33 @@ const Logement = () => {
             <Tag key={index} tag={tag} />
           ))}
         </div>
-        <div className="rating"></div>
+        <div className="rating">
+          {arrayOfRating.map((star, index) => (
+            <StarRating
+              key={index}
+              star={star}
+              rating={logementDetails.rating}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="drop-down-container">
+        <div className="drop-down-box">
+          <Dropdown
+            title="Description"
+            description={logementDetails.description}
+            Style={{ fontSize: "18px" }}
+          />
+        </div>
+        <div className="drop-down-box">
+          <Dropdown
+            title="Équipements"
+            Style={{ fontSize: "18px" }}
+            description={logementDetails.equipments.map((el, index) => (
+              <li key={index}>{el}</li>
+            ))}
+          />
+        </div>
       </div>
     </div>
   );
