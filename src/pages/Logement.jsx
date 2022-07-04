@@ -9,16 +9,13 @@ import Dropdown from "../components/Dropdown";
 
 const Logement = () => {
   const { id } = useParams();
-
   const arrayOfRating = [1, 2, 3, 4, 5];
-
   const logementDetails = myData.find((el) => el.id === id);
-  console.log(logementDetails);
 
   return (
     <div>
       <Navigation />
-      <Carrousel />
+      <Carrousel pictures={logementDetails.pictures} />
       <div className="details-logement">
         <div className="title">
           <h1>{logementDetails.title}</h1>
@@ -51,13 +48,13 @@ const Logement = () => {
           <Dropdown
             title="Description"
             description={logementDetails.description}
-            Style={{ fontSize: "18px" }}
+            style={{ fontSize: "18px" }}
           />
         </div>
         <div className="drop-down-box">
           <Dropdown
             title="Équipements"
-            Style={{ fontSize: "18px" }}
+            style={{ fontSize: "18px" }}
             description={logementDetails.equipments.map((el, index) => (
               <li key={index}>{el}</li>
             ))}

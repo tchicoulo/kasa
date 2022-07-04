@@ -8,7 +8,7 @@ const About = () => {
     {
       title: "Fiabilité",
       description:
-        "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et tout les informations sont régulièrement vérifiées par nos équipes.",
+        "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.",
     },
     {
       title: "Respect",
@@ -31,12 +31,13 @@ const About = () => {
       <Navigation />
       <BackgroundCustom background="bg-about" />
       {dropDownInformations.map((informations, index) => (
-        <Dropdown
-          key={index}
-          title={informations.title}
-          description={<p>{informations.description}</p>}
-          Style={{ fontSize: "24px" }}
-        />
+        <div key={index} style={{ width: "85%", margin: "0 auto" }}>
+          <Dropdown
+            title={informations.title}
+            description={<p>{informations.description}</p>}
+            style={{ fontSize: "20px" }}
+          />
+        </div>
       ))}
 
       <Footer />

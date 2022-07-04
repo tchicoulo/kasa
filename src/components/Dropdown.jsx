@@ -7,7 +7,7 @@ const Dropdown = (props) => {
   return (
     <div className="dropdown">
       <div className="dropdown-title">
-        <h3 style={props.Style}>{props.title}</h3>
+        <h3 style={props.style}>{props.title}</h3>
         {open ? (
           ""
         ) : (
@@ -31,7 +31,7 @@ const Dropdown = (props) => {
       </div>
       {open ? (
         <div className="dropdown-content">
-          <ul style={props.Style}>{props.description}</ul>
+          <ul style={props.style}>{props.description}</ul>
         </div>
       ) : (
         ""

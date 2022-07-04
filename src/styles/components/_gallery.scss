@@ -3,6 +3,9 @@
   margin: 50px 0;
   border-radius: 25px;
   background-color: $color-2;
+  @media only screen and (max-width: $sm) {
+    background-color: white;
+  }
   & ul {
     @include verticalCenter;
     flex-wrap: wrap;
