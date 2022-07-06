@@ -11,8 +11,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media only screen and (max-width: $sm) {
+    height: 35px;
+  }
   & h3 {
     font-weight: 500;
+    @media only screen and (max-width: $sm) {
+      font-size: 17px !important;
+    }
   }
 }
 

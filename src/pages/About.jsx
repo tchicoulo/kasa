@@ -31,7 +31,7 @@ const About = () => {
       <Navigation />
       <BackgroundCustom background="bg-about" />
       {dropDownInformations.map((informations, index) => (
-        <div key={index} style={{ width: "85%", margin: "0 auto" }}>
+        <div key={index} style={{ width: "80%", margin: "0 auto" }}>
           <Dropdown
             title={informations.title}
             description={<p>{informations.description}</p>}
