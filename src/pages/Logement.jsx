@@ -1,16 +1,21 @@
 import React from "react";
 import Navigation from "../components/Navigation";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import myData from "../data/logement.json";
 import Carrousel from "../components/Carrousel";
 import Tag from "../components/Tag";
 import StarRating from "../components/StarRating";
 import Dropdown from "../components/Dropdown";
+// import { useEffect } from "react";
 
 const Logement = () => {
   const { id } = useParams();
   const arrayOfRating = [1, 2, 3, 4, 5];
   const logementDetails = myData.find((el) => el.id === id);
+
+  if (logementDetails === undefined) {
+    return <Navigate to="/error" replace={true} />;
+  }
 
   return (
     <div>
