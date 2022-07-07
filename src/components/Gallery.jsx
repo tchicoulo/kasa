@@ -7,15 +7,6 @@ import { NavLink } from "react-router-dom";
 import myData from "../data/logement.json";
 
 const Gallery = () => {
-  // const [data, setData] = useState([]);
-
-  // useEffect(() => {
-  //   axios
-  //     .get("./data/logement.json")
-  //     .then((res) => setData(res.data))
-  //     .catch((err) => console.log(err));
-  // }, []);
-
   return (
     <div className="gallery">
       <ul>

@@ -6,7 +6,6 @@ import Carrousel from "../components/Carrousel";
 import Tag from "../components/Tag";
 import StarRating from "../components/StarRating";
 import Dropdown from "../components/Dropdown";
-// import { useEffect } from "react";
 
 const Logement = () => {
   const { id } = useParams();
