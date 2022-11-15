@@ -12,29 +12,35 @@ const Carrousel = ({ pictures }) => {
         className="carrousel-inner"
         style={{ backgroundImage: `url(${pictures[currentImg]})` }}
       >
-        <img
-          className="arrow-left"
-          onClick={() => {
-            currentImg
-              ? setCurrentImg(currentImg - 1)
-              : setCurrentImg(pictures.length - 1);
-          }}
-          src={arrowLeft}
-          alt="prev icon"
-        />
-        <span className="current-page">
-          {currentImg + 1}/{pictures.length}
-        </span>
-        <img
-          className="arrow-right"
-          onClick={() => {
-            currentImg + 1 < pictures.length
-              ? setCurrentImg(currentImg + 1)
-              : setCurrentImg(0);
-          }}
-          src={arrowRight}
-          alt="next icon"
-        />
+        {pictures.length > 1 ? (
+          <div className="carrousel-container">
+            <img
+              className="arrow-left"
+              onClick={() => {
+                currentImg
+                  ? setCurrentImg(currentImg - 1)
+                  : setCurrentImg(pictures.length - 1);
+              }}
+              src={arrowLeft}
+              alt="prev icon"
+            />
+            <span className="current-page">
+              {currentImg + 1}/{pictures.length}
+            </span>
+            <img
+              className="arrow-right"
+              onClick={() => {
+                currentImg + 1 < pictures.length
+                  ? setCurrentImg(currentImg + 1)
+                  : setCurrentImg(0);
+              }}
+              src={arrowRight}
+              alt="next icon"
+            />
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
